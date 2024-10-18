@@ -1,23 +1,17 @@
 import numpy as np
 import pandas as pd
 
-#using the pandas with the list ds of python with series ds of pandas
+#series with the dictionaries 
 
-#name = ["Aman","Ram","Noa","Ganesh"]
+marks = {
+    "maths": 100,
+    "English":80,
+    "science":85,
+    "hindi":70
+}
 
-#print(pd.Series(name))
+marks_series = pd.Series(marks,name="Subject wise Marks")
 
-#example of months 
+#in the dictionary we dont have to give the index its auotmatically take keys as index 
 
-#months =["jan","feb","march","april","may","june,","july","august","sep","oct","nov","dec"]
-
-#print(pd.Series(months))
-
-# using the index 
-
-runs = [59,32,30,88]
-batsman = ['Rohit',"Virat","Hardik","Rinku"]
-
-batsman_info = pd.Series(runs,index=batsman,name="Every Batsman runs ")
-
-print(batsman_info)
+print(marks_series)
