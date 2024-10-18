@@ -1,38 +1,27 @@
 import numpy as np
 import pandas as pd
 
-#series attributes 
 
-country = ["india","nepal","England","usa","russia"]
+# using the csv files
 
-nums = [1,2,3,4,5,6,9,1,4]
+a = pd.read_csv(r"C:\Users\NOA\Downloads\subs.csv")
 
-a = pd.Series(country,name="Countries Name")
-b = pd.Series(nums,name="Numbers")
-print(a.size) # this is for the size of ur series
+if len(a.columns) == 1:
+    a = a.squeeze("columns")
+print(a)
+print(type(a))
 
-print(a.dtype) # this is for data type of ur series
+b = pd.read_csv(r"C:\Users\NOA\Downloads\kohli_ipl.csv",index_col="match_no")
 
-print(a.name) # this will give the name which u given to the series 
+if len(b.columns) ==1:
+    b = b.squeeze("columns")
 
-print(a.is_unique) # True because no dupliactes in it 
-print(b.is_unique) # False because  dupliactes in it 
+print(b)
 
-print(a.index) # this will give the indexs
+c = pd.read_csv(r"C:\Users\NOA\Downloads\bollywood.csv",index_col="movie")
 
-marks = {
-    "maths":89,
-    "science":98,
-    "english":58
-}
+if len(c.columns) ==1:
+    c= c.squeeze("columns")
 
-sub_marks = pd.Series(marks,name="Noa's Marks")
+print(c)
 
-for i in sub_marks.index:
-    print(i) # means i use the series index which is key to print in th line wise 
-    
-for i in sub_marks.values:
-    print(i)# means i use the series index which is values to print in th line wise 
-
-for i,a in sub_marks.items():
-    print(f"{i}={a}")
