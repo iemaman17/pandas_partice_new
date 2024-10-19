@@ -1,27 +1,42 @@
 import numpy as np
 import pandas as pd
 
-
-# using the csv files
-
-a = pd.read_csv(r"C:\Users\NOA\Downloads\subs.csv")
-
+a = pd.read_csv(r"C:\Users\NOA\Downloads\kohli_ipl.csv",index_col="match_no")
 if len(a.columns) == 1:
     a = a.squeeze("columns")
+
 print(a)
+
 print(type(a))
 
-b = pd.read_csv(r"C:\Users\NOA\Downloads\kohli_ipl.csv",index_col="match_no")
+print(a.head())
+print(a.tail())
+print(a.sample(5))
 
-if len(b.columns) ==1:
-    b = b.squeeze("columns")
+# values_count function
 
-print(b)
+movies = pd.read_csv(r"C:\Users\NOA\Downloads\bollywood.csv",index_col="movie")
 
-c = pd.read_csv(r"C:\Users\NOA\Downloads\bollywood.csv",index_col="movie")
+if len(movies.columns)==1:
+    movies = movies.squeeze("columns")
 
-if len(c.columns) ==1:
-    c= c.squeeze("columns")
+print(movies.value_counts().head(1))
 
-print(c)
+print(a.sort_values(ascending=False).head(1).values)
+
+print(movies.sort_index())
+
+sub = pd.read_csv(r"C:\Users\NOA\Downloads\subs.csv")
+
+if len(sub.columns)==1:
+    sub = sub.squeeze("columns")
+
+print(sub.sum())
+print(sub.mean())
+print(sub.min())
+print(sub.max())
+print(sub.describe())
+
+
+
 
