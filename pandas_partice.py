@@ -1,41 +1,15 @@
 import numpy as np
 import pandas as pd
 
-a = pd.read_csv(r"C:\Users\NOA\Downloads\kohli_ipl.csv",index_col="match_no")
-if len(a.columns) == 1:
-    a = a.squeeze("columns")
+# series indexing 
 
-print(a)
+a= pd.Series([465,5,8,2,6,4,2,4,54,6,4,6])
 
-print(type(a))
+print(a[2])# noraml indexing 
 
-print(a.head())
-print(a.tail())
-print(a.sample(5))
+print(a[4:8]) # slicing 
 
-# values_count function
-
-movies = pd.read_csv(r"C:\Users\NOA\Downloads\bollywood.csv",index_col="movie")
-
-if len(movies.columns)==1:
-    movies = movies.squeeze("columns")
-
-print(movies.value_counts().head(1))
-
-print(a.sort_values(ascending=False).head(1).values)
-
-print(movies.sort_index())
-
-sub = pd.read_csv(r"C:\Users\NOA\Downloads\subs.csv")
-
-if len(sub.columns)==1:
-    sub = sub.squeeze("columns")
-
-print(sub.sum())
-print(sub.mean())
-print(sub.min())
-print(sub.max())
-print(sub.describe())
+print(a[[0,10,3]]) # fany indexing 
 
 
 
