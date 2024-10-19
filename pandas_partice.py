@@ -1,15 +1,25 @@
 import numpy as np
 import pandas as pd
 
-# series indexing 
+# adding the items in the Series 
 
-a= pd.Series([465,5,8,2,6,4,2,4,54,6,4,6])
+state = {
+    "Gujarat":"Gujarati",
+    "Rajasthan":"Rajasthani",
+    "Kerala":"Kanada"
+}
 
-print(a[2])# noraml indexing 
+state_lang = pd.Series(state)
+state_lang["kerala"] = "Kanda & Telegu"
 
-print(a[4:8]) # slicing 
+print(state_lang)
 
-print(a[[0,10,3]]) # fany indexing 
+state_lang["haryana"] = "Haryanvi & Hindi"
+print(state_lang)
+
+state_lang["Gujarat":"Rajasthan"] = ["Gujarati & Hindi","Rajasthani & hindi"]
+print(state_lang)
+
 
 
 
