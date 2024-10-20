@@ -1,25 +1,31 @@
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
 
-# ploting the graphs in the series 
+# maing the dataframes using the list 
+student_data = [
+    ["Aman",17,"Pandas"],
+    ["Noa",1,"PostgresQl"],
+    ["Ram",3,"Java"],
+    ["Jayesh",20,"Matplotlib"]
+]
 
-runs = pd.read_csv(r"C:\Users\NOA\Downloads\kohli_ipl.csv",index_col="match_no")
+columns_data = ["Name","Fav_no","Cousre"]
 
-if len(runs.columns)==1:
-    runs = runs.squeeze("columns")
+a = pd.DataFrame(student_data,columns=columns_data,index=[1,2,3,4])
 
-#runs[runs>80].plot()
-#print(plt.show())
+# making the dataframes uing the dictionaries 
 
-movie = pd.read_csv(r"C:\Users\NOA\Downloads\bollywood.csv",index_col="movie")
+country_info = {
+    "Country":["USA","India","China","Russia"],
+    "Militry_Rank":[1,4,3,2],
+    "Population":["34 cr","140 Cr","130 Cr","14 Cr"],
+    "Status":["Rich","Medium","Rich","Rich"]
+}
 
-if len(movie.columns)==1:
-    movie =movie.squeeze("columns")
+b = pd.DataFrame(country_info)
 
-a = movie.value_counts()
-a = a[a>15]
-print(a)
+# usually we imprt the data in real world
 
-a.plot(kind="pie")
-print(plt.show())
+movies = pd.read_csv(r"C:\Users\NOA\Downloads\movies.csv")
+
+ipl = pd.read_csv(r"C:\Users\NOA\Downloads\ipl-matches.csv")
