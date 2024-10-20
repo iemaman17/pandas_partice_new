@@ -10,12 +10,9 @@ students = {
     "Course":["Panda","Matplotlib","Java","AIML"],
     "IQ":[190,89,97,48]
 }
+
 s = pd.DataFrame(students)
 s.set_index("Name",inplace=True)
 print(s)
-print(s.iloc[0:3]) # using the slicing indexing 
-print(s.iloc[[0,2,3]]) # this is the fancy indexing 
 
-print(s)
-print(s.loc[["Aman","Noa"]]) #fancy indexing with the lables
-print(s.loc["Aman":"Ram"])
+print(s.loc[["Aman","Noa"],["Marks","IQ"]])
